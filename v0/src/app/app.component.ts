@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PostService } from './post.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'v0';
-  constructor() {}
+  loadedPost = [];
+  constructor(private post: PostService, private happti: HttpClient) {}
   onFetch() {}
 }

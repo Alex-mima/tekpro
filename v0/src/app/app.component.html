@@ -3,7 +3,13 @@ here it begins..
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <form (ngSubmit)="onFetch()"></form>
+      <form (ngSubmit)="">
+        <div class="form-group">
+          <label for="name"></label>
+          <input type="text" id="name" class="form-control" required ngModel />
+        </div>
+        <button class="btn btn-primary" (click)="onFetch()"></button>
+      </form>
     </div>
   </div>
 </div>

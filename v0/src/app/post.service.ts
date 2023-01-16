@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class PostService {
+export class PostService implements OnInit {
+  ngOnInit(): void {}
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  onCreatePost() {}
 }
