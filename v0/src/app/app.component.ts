@@ -9,7 +9,5 @@ import { PostService } from './post.service';
 })
 export class AppComponent {
   title = 'v0';
-  loadedPost = [];
   constructor(private post: PostService, private happti: HttpClient) {}
-  onFetch() {}
 }
