@@ -1,0 +1,12 @@
+.container-fluid {
+  background-color: rgba(234, 234, 234, 255);
+}
+
+form {
+  display: grid;
+  margin-top: 33%;
+}
+
+button {
+  justify-self: center;
+}
