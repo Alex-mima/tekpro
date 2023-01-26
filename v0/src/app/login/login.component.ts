@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PostService } from '../post.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { PostService } from '../post.service';
 export class LoginComponent {
   signupForm: FormGroup;
 
-  constructor(private post: PostService, private happti: HttpClient, private Route: ActivatedRoute) {}
+  constructor(private post: PostService, private happti: HttpClient, private Route: ActivatedRoute, private router:Router) {}
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -20,7 +20,10 @@ export class LoginComponent {
       password: new FormControl(null, Validators.required),
     });
   }
-
+  onLoadServer(id: number) {
+    // complex calculation
+    this.router.navigate(['/table'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});
+  }
   onSubmit() {
     console.log(this.signupForm);
   }
